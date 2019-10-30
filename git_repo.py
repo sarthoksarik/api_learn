@@ -21,10 +21,14 @@ for repo_dict in repo_dicts:
 
 # make visualizatiom
 data = [{
-        'type': 'Bar',
+        'type': 'bar',
         'x': repo_names,
         'y': stars,
         }]
 my_layout = {
-
+    'title': 'Most Starred Python Projects in Github',
+    'xaxis': {'title': 'Repository'},
+    'yaxis': {'title': 'Stars'},
 }
+fig = {'data': data, 'layout': my_layout, }
+offline.plot(fig, filename='pyrepo.html')
